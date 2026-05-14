@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Program>
+	<Module>TCPSocketCommunication.mod</Module>
+	<Module>TubeCapStationModule.mod</Module>
+	<Module>ClampDeviceModule.mod</Module>
+	<Module>BottleCapStationModule.mod</Module>
+	<Module>MainModule.mod</Module>
+</Program>

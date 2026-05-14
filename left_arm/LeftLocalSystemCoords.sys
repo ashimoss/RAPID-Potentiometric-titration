@@ -1,0 +1,42 @@
+MODULE LeftLocalSystemCoords(SYSMODULE)
+    
+    PERS wobjdata TubeCapStationCS:= [FALSE, TRUE, "", [[289.56, 162.44, -5.36],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]];
+    PERS wobjdata BottleCapStationCS;      
+    PERS wobjdata ClampDeviceLeftCS;
+    PERS wobjdata TipsLeftCS;
+    PERS wobjdata BottleLeftCS;
+    PERS wobjdata TubeLeftCS;
+    PERS wobjdata TitrationLeftCellCS;
+    
+        
+    PROC InitializeCSL()
+        CONST num X_CS_offset := 160;
+        CONST num Y_CS_offset := 160;
+                        
+        BottleCapStationCS := TubeCapStationCS;
+        BottleCapStationCS.uframe.trans.x := BottleCapStationCS.uframe.trans.x + 2 * X_CS_offset;
+        BottleCapStationCS.uframe.trans.y := BottleCapStationCS.uframe.trans.y + 0 * Y_CS_offset;
+        
+        ClampDeviceLeftCS := TubeCapStationCS;
+        ClampDeviceLeftCS.uframe.trans.x := ClampDeviceLeftCS.uframe.trans.x + 0 * X_CS_offset;
+        ClampDeviceLeftCS.uframe.trans.y := ClampDeviceLeftCS.uframe.trans.y - 1 * Y_CS_offset;
+        
+        TipsLeftCS := TubeCapStationCS;
+        TipsLeftCS.uframe.trans.x := TipsLeftCS.uframe.trans.x + 1 * X_CS_offset;
+        TipsLeftCS.uframe.trans.y := TipsLeftCS.uframe.trans.y - 2 * Y_CS_offset;
+        
+        BottleLeftCS := TubeCapStationCS;
+        BottleLeftCS.uframe.trans.x := BottleLeftCS.uframe.trans.x + 1 * X_CS_offset;
+        BottleLeftCS.uframe.trans.y := BottleLeftCS.uframe.trans.y + 0 * Y_CS_offset;
+        
+        TubeLeftCS := TubeCapStationCS;
+        TubeLeftCS.uframe.trans.x := TubeLeftCS.uframe.trans.x + 1 * X_CS_offset;
+        TubeLeftCS.uframe.trans.y := TubeLeftCS.uframe.trans.y + 1 * Y_CS_offset;
+        
+        TitrationLeftCellCS := TubeCapStationCS;
+        TitrationLeftCellCS.uframe.trans.x := TitrationLeftCellCS.uframe.trans.x + 2 * X_CS_offset;
+        TitrationLeftCellCS.uframe.trans.y := TitrationLeftCellCS.uframe.trans.y - 1 * Y_CS_offset;
+        
+    ENDPROC
+    
+ENDMODULE
