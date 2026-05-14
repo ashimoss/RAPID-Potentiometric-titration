@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Program>
+	<Module>TitrationModule.mod</Module>
+	<Module>TCPSocketCommunication.mod</Module>
+	<Module>BottleDispStation.mod</Module>
+	<Module>TipsModule.mod</Module>
+	<Module>TubeDispStation.mod</Module>
+	<Module>DispenserModule.mod</Module>
+	<Module>MainModule.mod</Module>
+</Program>

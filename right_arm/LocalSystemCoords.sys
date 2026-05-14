@@ -1,0 +1,37 @@
+MODULE LocalSystemCoords(SYSMODULE)
+    PERS wobjdata TubeBankLCS := [FALSE, TRUE, "", [[199.42, -627.81, 114.76],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]];
+    PERS wobjdata DispenserCS := [FALSE, TRUE, "", [[441.0777,-321.9563,-5.123412],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]];
+    PERS wobjdata TipsCS; 
+    PERS wobjdata BottleDispStationCS;
+    PERS wobjdata TubeDispStationCS;
+    PERS wobjdata TitrationCellCS;
+    PERS wobjdata ClampDeviceRightCS;
+    
+!    PERS wobjdata TipsCS := [FALSE, TRUE, "", [[466.82, -160.62, 34.34],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]]; ! DispenserCS +160 mm = TipsCS
+!    PERS wobjdata BottleDispStationCS := [FALSE, TRUE, "", [[466.82, 0.62, 34.34],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]]; ! TipsCS +160 mm = BottleDispStationCS
+!    PERS wobjdata TipsCSTest:= [FALSE, TRUE, "", [[616.82, -320.62, 34.34],[1, 0, 0, 0]],[[0, 0, 0],[1, 0, 0, 0]]];
+        
+
+    PROC InitializeCSR()
+        CONST num X_CS_offset := 160;
+        CONST num Y_CS_offset := 160;
+        
+        TipsCS := DispenserCS;
+        TipsCS.uframe.trans.x := TipsCS.uframe.trans.x + 0 * X_CS_offset;
+        TipsCS.uframe.trans.y := TipsCS.uframe.trans.y + 1 * Y_CS_offset;
+        
+        TubeDispStationCS := DispenserCS;
+        TubeDispStationCS.uframe.trans.x := TubeDispStationCS.uframe.trans.x + 0 * X_CS_offset;
+        TubeDispStationCS.uframe.trans.y := TubeDispStationCS.uframe.trans.y + 3 * Y_CS_offset;
+        
+        TitrationCellCS := DispenserCS;
+        TitrationCellCS.uframe.trans.x := TitrationCellCS.uframe.trans.x + 1 * X_CS_offset;
+        TitrationCellCS.uframe.trans.y := TitrationCellCS.uframe.trans.y + 2 * Y_CS_offset;
+        
+        ClampDeviceRightCS := DispenserCS;
+        ClampDeviceRightCS.uframe.trans.x := ClampDeviceRightCS.uframe.trans.x - 1 * X_CS_offset;
+        ClampDeviceRightCS.uframe.trans.y := ClampDeviceRightCS.uframe.trans.y + 2 * Y_CS_offset;
+        
+    ENDPROC
+
+ENDMODULE 
